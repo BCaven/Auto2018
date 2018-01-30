@@ -1,8 +1,9 @@
 package org.usfirst.frc.team86.robot;
-/*
-import edu.wpi.first.wpilibj.SPI;
-import com.kauailabs.navx.frc.AHRS;
-*/
+
+//import com.kauailabs.navx.frc.AHRS;
+//
+//import edu.wpi.first.wpilibj.SPI;
+
 public class NavX {
 /*
 	public AHRS ahrs = new AHRS(SPI.Port.kMXP);
@@ -24,5 +25,4 @@ public class NavX {
 	}
 
 */
-
 }

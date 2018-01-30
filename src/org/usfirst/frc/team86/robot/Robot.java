@@ -8,6 +8,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Robot extends IterativeRobot {
 
+	private static double robotPosition = 0; 
+	
 	@Override
 	public void robotInit() {
 		
@@ -16,6 +18,8 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void autonomousInit() {
 		String gameData = DriverStation.getInstance().getGameSpecificMessage();
+		robotPosition = SmartDashboard.getNumber("RobotPosistion (0,1,2, 3)", 0);
+		
 		int home  = gameData.charAt(0)=='L'?0:1; 
 		int scale = gameData.charAt(1)=='L'?0:1;
 		
@@ -25,7 +29,7 @@ public class Robot extends IterativeRobot {
 
 	@Override
 	public void autonomousPeriodic() {
-		PathChoosing.choosePath();
+		PathChoosing.choosePath(robotPosition);
 	}
 
 	@Override

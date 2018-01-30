@@ -35,6 +35,7 @@ public class Paths {
 			state++;
 			break;
 		case 5:
+			SmartDashboard.putString("What just happened:", "Right Switch");
 			SmartDashboard.putNumber("RToRSwitch State", state);
 			if (scale == 0) {
 				RSwitchToLScale();
@@ -82,6 +83,7 @@ public class Paths {
 			state++;
 			break;
 		case 6:
+			SmartDashboard.putString("What just happened:", "Left Switch");
 			SmartDashboard.putNumber("RToLSwitch State", state);
 			if (scale == 0) {
 				LSwitchToLScale();
@@ -129,6 +131,7 @@ public class Paths {
 			state++;
 			break;
 		case 6:
+			SmartDashboard.putString("What just happened:", "Right Switch");
 			SmartDashboard.putNumber("LToRSwitch State", state);
 			if (scale == 0) {
 				RSwitchToLScale();
@@ -172,6 +175,7 @@ public class Paths {
 			state++;
 			break;
 		case 5:
+			SmartDashboard.putString("What just happened:", "Left Switch");
 			SmartDashboard.putNumber("LToLSwitch State", state);
 			if (scale == 0) {
 				LSwitchToLScale();
@@ -298,6 +302,7 @@ public class Paths {
 			state++;
 			break;
 		case 3:
+			SmartDashboard.putString("What just happened:", "Right Scale");
 			SmartDashboard.putNumber("RSwitchToRScale State", state);
 			AutoRobotFunctions.placeScale();
 			break;
@@ -326,6 +331,7 @@ public class Paths {
 			state++;
 			break;
 		case 3:
+			SmartDashboard.putString("What just happened:", "Left Scale");
 			SmartDashboard.putNumber("RSwitchToLScale State", state);
 			AutoRobotFunctions.placeScale();
 			break;
@@ -355,6 +361,7 @@ public class Paths {
 			state++;
 			break;
 		case 3:
+			SmartDashboard.putString("What just happened:", "Right Scale");
 			SmartDashboard.putNumber("LSwitchToRScale State", state);
 			AutoRobotFunctions.placeScale();
 			break;
@@ -384,6 +391,7 @@ public class Paths {
 			state++;
 			break;
 		case 3:
+			SmartDashboard.putString("What just happened:", "Left Scale");
 			SmartDashboard.putNumber("LSwitchToLScale State", state);
 			AutoRobotFunctions.placeScale();
 			break;

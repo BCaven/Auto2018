@@ -5,13 +5,12 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class PathChoosing {
 	private static String gameData = DriverStation.getInstance().getGameSpecificMessage();
-	private static double robotPosition = SmartDashboard.getNumber("RobotPosistion (0,1,2, 3)", 0);
 
 	// Left is = 0, Right is equal 1
 	private static int home = gameData.charAt(0) == 'L' ? 0 : 1;
 	private static int scale = gameData.charAt(1) == 'L' ? 0 : 1;
 
-	public static void choosePath() {
+	public static void choosePath(double robotPosition) {
 		if (robotPosition == 0) { // If the robot starts in the left position
 			if (home == 0) { // If the switch goal is on the left
 				Paths.LToLSwitch(0, scale);
