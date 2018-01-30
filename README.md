@@ -1,7 +1,7 @@
 # Auto2018
 _This code is designed with the soul purpose of running autonomous for the robot_
 
-'''
+```
 -------------------------------------------------------------------------		  
 |      / |   |  |    |                              |  	 |	|	|\		|		  |
 |     /  | R |  | RI |                              | LI |	| L | \		|		  |
@@ -39,7 +39,7 @@ _This code is designed with the soul purpose of running autonomous for the robot
 |       |                          |                  		 |			|		  |
 |       |                          |                  		 |			|		  |
 -------------------------------------------------------------------------
-'''
+```
 
 ## The General Movement Procedure
 1. Drive to Row 1
