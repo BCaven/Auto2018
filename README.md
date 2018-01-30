@@ -1,6 +1,7 @@
 # Auto2018
 _This code is designed with the soul purpose of running autonomous for the robot_
 
+<section>
 -------------------------------------------------------------------------		  
 |      / |   |  |    |                              |  	 |	|	|\		|		  |
 |     /  | R |  | RI |                              | LI |	| L | \		|		  |
@@ -38,6 +39,7 @@ _This code is designed with the soul purpose of running autonomous for the robot
 |       |                          |                  		 |			|		  |
 |       |                          |                  		 |			|		  |
 -------------------------------------------------------------------------
+</ section>
 
 ## The General Movement Procedure
 1. Drive to Row 1
@@ -50,19 +52,3 @@ _This code is designed with the soul purpose of running autonomous for the robot
 8. Align to Scale Place Position on Row 2
 9. Move to Scale Place Position
 10. _Place CUBE_ 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
