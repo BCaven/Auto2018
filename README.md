@@ -12,7 +12,7 @@ _This code is designed with the soul purpose of running autonomous for the robot
 |/                                                  				    		|		  |
 |                                                   				    		|		  |
 |                                                   				    		|		  |
-|- - -X- - X- - - -X - - - - - - - - - - - - - - - - - X - - - X - X - -|	<----|Row 1 
+|- - -X- - X- - - -X - - - - - - - - - - - - - - - - - X - - - X - X - -|	<----| Row 1 
 |                             ---------                				   		|		  |
 |                             |       |              						|		  |
 |                             |       |              						|		  |
@@ -23,11 +23,11 @@ _This code is designed with the soul purpose of running autonomous for the robot
 |           |                      |                   	 |					|		  |
 |           |                      |                  	 |					|		  |
 |           ----------------------------------------------					|		  |
-| - - - - - - - - - - X - - - - - - - - - - - - - X - - - - - - - - - - |	<----|Switch Placement Position
+| - - - - - - - - - - X - - - - - - - - - - - - - X - - - - - - - - - - |	<----| Switch Placement Position
 |                                                   							|		  |
 |                                                   							|		  |
 |                                                   							|		  |
-|- - -X - - - - - - - X - - - - - - - - - - - - - X - - - - - - - X - - |	<----|Row 2
+|- - -X - - - - - - - X - - - - - - - - - - - - - X - - - - - - - X - - |	<----| Row 2
 |                                                   							|		  |
 |                                                   							|		  |
 |                                                   							|		  |
@@ -35,7 +35,7 @@ _This code is designed with the soul purpose of running autonomous for the robot
 |       |                          |                  		 |				|		  |
 |       |                          |                  		 |				|		  |
 |       |                          |                  		 |				|		  |
-|- -X - |                          |                  		 | - X - - - |	<----|Scale Placement Position
+|- -X - |                          |                  		 | - X - - - |	<----| Scale Placement Position
 |       |                          |                  		 |				|		  |
 |       |                          |                  		 |				|		  |
 -------------------------------------------------------------------------
