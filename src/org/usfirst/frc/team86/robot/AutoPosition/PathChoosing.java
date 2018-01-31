@@ -11,28 +11,40 @@ public class PathChoosing {
 	private static int scale = gameData.charAt(1) == 'L' ? 0 : 1;
 
 	public static void choosePath(double robotPosition) {
-		if (robotPosition == 0) { // If the robot starts in the left position
-			if (home == 0) { // If the switch goal is on the left
+		// If the robot starts in the left position
+		if (robotPosition == 0) {
+			// If the switch goal is on the left
+			if (home == 0) {
 				Paths.LToLSwitch(0, scale);
-			} else { // If the switch goal is on the right
+			} else {
+				// If the switch goal is on the right
 				Paths.LToRSwitch(0, scale);
 			}
-		} else if (robotPosition == 1) { // If the robot starts in the inner left position
-			if (home == 0) { // If the switch goal is on the left
+			// If the robot starts in the inner left position
+		} else if (robotPosition == 1) {
+			// If the switch goal is on the left
+			if (home == 0) {
 				Paths.ILToLSwitch(0, scale);
-			} else { // If the switch goal is on the right
+			} else {
+				// If the switch goal is on the right
 				Paths.ILToRSwitch(0, scale);
 			}
-		} else if (robotPosition == 2) { // If the robot starts in the inner right position
-			if (home == 0) { // If the switch goal is on the left
+			// If the robot starts in the inner right position
+		} else if (robotPosition == 2) {
+			// If the switch goal is on the left
+			if (home == 0) {
 				Paths.IRToLSwitch(0, scale);
-			} else { // If the switch goal is on the right
+			} else {
+				// If the switch goal is on the right
 				Paths.IRToRSwitch(0, scale);
 			}
-		} else if (robotPosition == 3) { // If the robot starts in the right position
-			if (home == 0) { // If the switch goal is on the left
+			// If the robot starts in the right position
+		} else if (robotPosition == 3) {
+			// If the switch goal is on the left
+			if (home == 0) {
 				Paths.RToLSwitch(0, scale);
-			} else { // If the switch goal is on the right
+			} else {
+				// If the switch goal is on the right
 				Paths.RToRSwitch(0, scale);
 			}
 		}
