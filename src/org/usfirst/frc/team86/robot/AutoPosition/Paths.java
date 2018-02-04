@@ -5,10 +5,10 @@ import org.usfirst.frc.team86.robot.AutoRobotFunctions;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Paths {
-
+	private static int stateProgress = 0;
+	
 	// ------------------------------
 	public static void RToRSwitch(int inputState, int scale) {
-		int stateProgress = 0;
 		int state = inputState + stateProgress;
 		switch (state) {
 		case 0:// Go to row one
@@ -54,7 +54,6 @@ public class Paths {
 	}
 
 	public static void RToLSwitch(int inputState, int scale) {
-		int stateProgress = 0;
 		int state = inputState + stateProgress;
 		switch (state) {
 		case 0:// Go to row one
@@ -104,7 +103,6 @@ public class Paths {
 	}
 
 	public static void LToRSwitch(int inputState, int scale) {
-		int stateProgress = 0;
 		int state = inputState + stateProgress;
 		switch (state) {
 		case 0:// Go to row one
@@ -154,7 +152,6 @@ public class Paths {
 	}
 
 	public static void LToLSwitch(int inputState, int scale) {
-		int stateProgress = 0;
 		int state = inputState + stateProgress;
 		switch (state) {
 		case 0:// Go to row one
@@ -200,7 +197,6 @@ public class Paths {
 	}
 
 	public static void IRToRSwitch(int inputState, int scale) {
-		int stateProgress = 0;
 		int state = inputState + stateProgress;
 		switch (state) {
 		case 0:
@@ -215,7 +211,7 @@ public class Paths {
 			break;
 		case 2:
 			SmartDashboard.putNumber("IRToRSwitch State", state);
-			RToRSwitch(1, scale);
+			RToRSwitch((1 - state), scale);
 			break;
 		default:
 			state = 0;
@@ -224,7 +220,6 @@ public class Paths {
 	}
 
 	public static void IRToLSwitch(int inputState, int scale) {
-		int stateProgress = 0;
 		int state = inputState + stateProgress;
 		switch (state) {
 		case 0:
@@ -239,7 +234,7 @@ public class Paths {
 			break;
 		case 2:
 			SmartDashboard.putNumber("IRToLSwitch State", state);
-			LToLSwitch(1, scale);
+			LToLSwitch((1 - state), scale);
 			break;
 		default:
 			state = 0;
@@ -249,7 +244,6 @@ public class Paths {
 	}
 
 	public static void ILToRSwitch(int inputState, int scale) {
-		int stateProgress = 0;
 		int state = inputState + stateProgress;
 		switch (state) {
 		case 0:
@@ -264,7 +258,7 @@ public class Paths {
 			break;
 		case 2:
 			SmartDashboard.putNumber("ILToRSwitch State", state);
-			RToRSwitch(1, scale);
+			RToRSwitch((1 - state), scale);
 			break;
 		default:
 			state = 0;
@@ -274,7 +268,6 @@ public class Paths {
 	}
 
 	public static void ILToLSwitch(int inputState, int scale) {
-		int stateProgress = 0;
 		int state = inputState + stateProgress;
 		switch (state) {
 		case 0:
@@ -289,7 +282,7 @@ public class Paths {
 			break;
 		case 2:
 			SmartDashboard.putNumber("ILToLSwitch State", state);
-			LToLSwitch(0, scale);
+			LToLSwitch((1 - state), scale);
 			break;
 		default:
 			state = 0;
