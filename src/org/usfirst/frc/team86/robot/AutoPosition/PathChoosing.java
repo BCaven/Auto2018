@@ -1,7 +1,6 @@
 package org.usfirst.frc.team86.robot.AutoPosition;
 
 import edu.wpi.first.wpilibj.DriverStation;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class PathChoosing {
 	private static String gameData = DriverStation.getInstance().getGameSpecificMessage();
