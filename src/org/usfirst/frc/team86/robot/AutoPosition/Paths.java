@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Paths {
 	private static int stateProgress = 0;
-	
+
 	// ------------------------------
 	public static void RToRSwitch(int inputState, int scale) {
 		int state = inputState + stateProgress;
@@ -37,7 +37,7 @@ public class Paths {
 			stateProgress++;
 			break;
 		case 5:
-			SmartDashboard.putString("What just happened:", "Right Switch");
+			SmartDashboard.putString("Finished:", "Right Switch");
 			SmartDashboard.putNumber("RToRSwitch State", state);
 			if (scale == 0) {
 				RSwitchToLScale();
@@ -86,7 +86,7 @@ public class Paths {
 			stateProgress++;
 			break;
 		case 6:
-			SmartDashboard.putString("What just happened:", "Left Switch");
+			SmartDashboard.putString("Finished:", "Left Switch");
 			SmartDashboard.putNumber("RToLSwitch State", state);
 			if (scale == 0) {
 				LSwitchToLScale();
@@ -135,7 +135,7 @@ public class Paths {
 			stateProgress++;
 			break;
 		case 6:
-			SmartDashboard.putString("What just happened:", "Right Switch");
+			SmartDashboard.putString("Finished:", "Right Switch");
 			SmartDashboard.putNumber("LToRSwitch State", state);
 			if (scale == 0) {
 				RSwitchToLScale();
@@ -180,7 +180,7 @@ public class Paths {
 			stateProgress++;
 			break;
 		case 5:
-			SmartDashboard.putString("What just happened:", "Left Switch");
+			SmartDashboard.putString("Finished:", "Left Switch");
 			SmartDashboard.putNumber("LToLSwitch State", state);
 			if (scale == 0) {
 				LSwitchToLScale();
@@ -211,7 +211,8 @@ public class Paths {
 			break;
 		case 2:
 			SmartDashboard.putNumber("IRToRSwitch State", state);
-			RToRSwitch((1 - state), scale);
+			stateProgress = 0;
+			RToRSwitch(1, scale);
 			break;
 		default:
 			state = 0;
@@ -234,7 +235,8 @@ public class Paths {
 			break;
 		case 2:
 			SmartDashboard.putNumber("IRToLSwitch State", state);
-			LToLSwitch((1 - state), scale);
+			stateProgress = 0;
+			RToRSwitch(1, scale);
 			break;
 		default:
 			state = 0;
@@ -258,7 +260,8 @@ public class Paths {
 			break;
 		case 2:
 			SmartDashboard.putNumber("ILToRSwitch State", state);
-			RToRSwitch((1 - state), scale);
+			stateProgress = 0;
+			RToRSwitch(1, scale);
 			break;
 		default:
 			state = 0;
@@ -282,7 +285,8 @@ public class Paths {
 			break;
 		case 2:
 			SmartDashboard.putNumber("ILToLSwitch State", state);
-			LToLSwitch((1 - state), scale);
+			stateProgress = 0;
+			RToRSwitch(1, scale);
 			break;
 		default:
 			state = 0;
@@ -292,120 +296,117 @@ public class Paths {
 	}
 
 	// -----------------------------------------------------------------------------------------
+	static int switchToScaleState = 0;
 	public static void RSwitchToRScale() {
-		int state = 0;
-		switch (state) {
+		switch (switchToScaleState) {
 		case 0:// Go to row
-			SmartDashboard.putNumber("RSwitchToRScale State", state);
+			SmartDashboard.putNumber("RSwitchToRScale State", switchToScaleState);
 			MoveToPositions.moveTo(Map.keyPointsX[2][1], Map.keyPointsY[3], Map.keyPointsX[2][1], Map.keyPointsY[2]);
-			state++;
+			switchToScaleState++;
 			break;
 		case 1:// Align to scale
-			SmartDashboard.putNumber("RSwitchToRScale State", state);
+			SmartDashboard.putNumber("RSwitchToRScale State", switchToScaleState);
 			MoveToPositions.moveTo(Map.keyPointsX[2][1], Map.keyPointsY[2], Map.keyPointsX[3][1], Map.keyPointsY[2]);
-			state++;
+			switchToScaleState++;
 			break;
 		case 2:// Go to scale
-			SmartDashboard.putNumber("RSwitchToRScale State", state);
+			SmartDashboard.putNumber("RSwitchToRScale State", switchToScaleState);
 			MoveToPositions.moveTo(Map.keyPointsX[3][1], Map.keyPointsY[2], Map.keyPointsX[3][1], Map.keyPointsY[4]);
-			state++;
+			switchToScaleState++;
 			break;
 		case 3:
-			SmartDashboard.putString("What just happened:", "Right Scale");
-			SmartDashboard.putNumber("RSwitchToRScale State", state);
+			SmartDashboard.putString("Finished:", "Right Scale");
+			SmartDashboard.putNumber("RSwitchToRScale State", switchToScaleState);
 			AutoRobotFunctions.placeScale();
 			break;
 		default:
-			state = 0;
+			switchToScaleState = 0;
 			break;
 		}
 	}
 
 	public static void RSwitchToLScale() {
-		int state = 0;
-		switch (state) {
+		switch (switchToScaleState) {
 		case 0:// Go to row
-			SmartDashboard.putNumber("RSwitchToLScale State", state);
+			SmartDashboard.putNumber("RSwitchToLScale State", switchToScaleState);
 			MoveToPositions.moveTo(Map.keyPointsX[2][1], Map.keyPointsY[3], Map.keyPointsX[2][1], Map.keyPointsY[2]);
-			state++;
+			switchToScaleState++;
 			break;
 		case 1:// Align to scale
-			SmartDashboard.putNumber("RSwitchToLScale State", state);
+			SmartDashboard.putNumber("RSwitchToLScale State", switchToScaleState);
 			MoveToPositions.moveTo(Map.keyPointsX[2][1], Map.keyPointsY[2], Map.keyPointsX[3][0], Map.keyPointsY[2]);
-			state++;
+			switchToScaleState++;
 			break;
 		case 2:// Go to scale
-			SmartDashboard.putNumber("RSwitchToLScale State", state);
+			SmartDashboard.putNumber("RSwitchToLScale State", switchToScaleState);
 			MoveToPositions.moveTo(Map.keyPointsX[3][0], Map.keyPointsY[2], Map.keyPointsX[3][0], Map.keyPointsY[4]);
-			state++;
+			switchToScaleState++;
 			break;
 		case 3:
-			SmartDashboard.putString("What just happened:", "Left Scale");
-			SmartDashboard.putNumber("RSwitchToLScale State", state);
+			SmartDashboard.putString("Finished:", "Left Scale");
+			SmartDashboard.putNumber("RSwitchToLScale State", switchToScaleState);
 			AutoRobotFunctions.placeScale();
 			break;
 		default:
-			state = 0;
+			switchToScaleState = 0;
 			break;
 		}
 
 	}
 
 	public static void LSwitchToRScale() {
-		int state = 0;
-		switch (state) {
+		switch (switchToScaleState) {
 		case 0:// Go to row
-			SmartDashboard.putNumber("LSwitchToRScale State", state);
+			SmartDashboard.putNumber("LSwitchToRScale State", switchToScaleState);
 			MoveToPositions.moveTo(Map.keyPointsX[2][0], Map.keyPointsY[3], Map.keyPointsX[2][0], Map.keyPointsY[2]);
-			state++;
+			switchToScaleState++;
 			break;
 		case 1:// Align to scale
-			SmartDashboard.putNumber("LSwitchToRScale State", state);
+			SmartDashboard.putNumber("LSwitchToRScale State", switchToScaleState);
 			MoveToPositions.moveTo(Map.keyPointsX[2][0], Map.keyPointsY[2], Map.keyPointsX[3][1], Map.keyPointsY[2]);
-			state++;
+			switchToScaleState++;
 			break;
 		case 2:// Go to scale
-			SmartDashboard.putNumber("LSwitchToRScale State", state);
+			SmartDashboard.putNumber("LSwitchToRScale State", switchToScaleState);
 			MoveToPositions.moveTo(Map.keyPointsX[3][1], Map.keyPointsY[2], Map.keyPointsX[3][1], Map.keyPointsY[4]);
-			state++;
+			switchToScaleState++;
 			break;
 		case 3:
-			SmartDashboard.putString("What just happened:", "Right Scale");
-			SmartDashboard.putNumber("LSwitchToRScale State", state);
+			SmartDashboard.putString("Finished:", "Right Scale");
+			SmartDashboard.putNumber("LSwitchToRScale State", switchToScaleState);
 			AutoRobotFunctions.placeScale();
 			break;
 		default:
-			state = 0;
+			switchToScaleState = 0;
 			break;
 		}
 
 	}
 
 	public static void LSwitchToLScale() {
-		int state = 0;
-		switch (state) {
+		switch (switchToScaleState) {
 		case 0:// Go to row
-			SmartDashboard.putNumber("LSwitchToLScale State", state);
+			SmartDashboard.putNumber("LSwitchToLScale State", switchToScaleState);
 			MoveToPositions.moveTo(Map.keyPointsX[2][0], Map.keyPointsY[3], Map.keyPointsX[2][0], Map.keyPointsY[2]);
-			state++;
+			switchToScaleState++;
 			break;
 		case 1:// Align to scale
-			SmartDashboard.putNumber("LSwitchToLScale State", state);
+			SmartDashboard.putNumber("LSwitchToLScale State", switchToScaleState);
 			MoveToPositions.moveTo(Map.keyPointsX[2][0], Map.keyPointsY[2], Map.keyPointsX[3][0], Map.keyPointsY[2]);
-			state++;
+			switchToScaleState++;
 			break;
 		case 2:// Go to scale
-			SmartDashboard.putNumber("LSwitchToLScale State", state);
+			SmartDashboard.putNumber("LSwitchToLScale State", switchToScaleState);
 			MoveToPositions.moveTo(Map.keyPointsX[3][0], Map.keyPointsY[2], Map.keyPointsX[3][0], Map.keyPointsY[4]);
-			state++;
+			switchToScaleState++;
 			break;
 		case 3:
-			SmartDashboard.putString("What just happened:", "Left Scale");
-			SmartDashboard.putNumber("LSwitchToLScale State", state);
+			SmartDashboard.putString("Finished:", "Left Scale");
+			SmartDashboard.putNumber("LSwitchToLScale State", switchToScaleState);
 			AutoRobotFunctions.placeScale();
 			break;
 		default:
-			state = 0;
+			switchToScaleState = 0;
 			break;
 		}
 	}
