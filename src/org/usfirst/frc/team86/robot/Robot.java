@@ -13,6 +13,7 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void robotInit() {
 		SmartDashboard.putNumber("RobotPosistion(0,1,2,3)", robotPosition);
+		OutputSmartDashboard.fillAll(0);
 	}
 
 	@Override
@@ -23,8 +24,9 @@ public class Robot extends IterativeRobot {
 		int home  = gameData.charAt(0)=='L'?0:1; 
 		int scale = gameData.charAt(1)=='L'?0:1;
 		
-		SmartDashboard.putNumber("home", home);
-		SmartDashboard.putNumber("scale", scale);
+		SmartDashboard.putNumber("Some", home);
+		SmartDashboard.putNumber("Scale", scale);
+		SmartDashboard.putNumber("RobotPosition", robotPosition );
 	}
 
 	@Override
